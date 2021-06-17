@@ -1,11 +1,10 @@
-package com.example.UserManagementSpringBoot.dao;
+package com.example.UserManagementSpringBoot.repository;
 
 import com.example.UserManagementSpringBoot.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.tree.RowMapper;
 import java.util.List;
 
 @Repository
@@ -35,20 +34,17 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public String addUser(User user) {
+    public void addUser(User user) {
         jdbcTemplate.update(INSERT_USER_QUERY,user.getId(),user.getUserName(),user.getCity());
-        return "User successfully created";
     }
 
     @Override
-    public String updateUser(User user) {
+    public void updateUser(User user) {
         jdbcTemplate.update(UPDATE_USER_QUERY,user.getUserName(),user.getCity(),user.getId());
-        return "User successfully updated";
     }
 
     @Override
-    public String deleteUser(int id) {
+    public void deleteUser(int id) {
         jdbcTemplate.update(DELETE_USER_QUERY,id);
-        return "User successfully deleted";
     }
 }
