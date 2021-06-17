@@ -13,8 +13,8 @@ public class UserRepositoryImpl implements UserRepository {
     private static final String GET_USERS_QUERY="SELECT * FROM user";
     private static final String INSERT_USER_QUERY="INSERT INTO user(id,userName,city) values(?,?,?)";
     private static final String UPDATE_USER_QUERY="UPDATE user SET userName=?, city=? WHERE id=?";
-    private static final String GET_USER_BY_ID_QUERY="SELECT * FROM user WHERE id=?";
-    private static final String DELETE_USER_QUERY="DELETE FROM user WHERE id=?";
+    private static final String GET_USER_BY_ID_QUERY="SELECT * FROM user WHERE id=? AND deleted!=1";
+    private static final String DELETE_USER_QUERY="UPDATE user SET deleted=true WHERE id=?";
 
     @Autowired
     private JdbcTemplate jdbcTemplate;

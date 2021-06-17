@@ -4,6 +4,7 @@ public class User {
     private int id;
     private String userName;
     private String city;
+    private boolean deleted;
 
     public User(int id, String userName, String city) {
         this.id = id;
@@ -33,5 +34,13 @@ public class User {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 }
