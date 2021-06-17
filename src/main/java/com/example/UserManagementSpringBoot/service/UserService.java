@@ -13,7 +13,7 @@ public interface UserService {
 
     List<User> getUsers();
     User getUserById(int id);
-    String addUser(User user);
-    String updateUser(User user);
-    String deleteUser(int id);
+    boolean addUser(User user);
+    boolean updateUser(User user);
+    boolean deleteUser(int id);
 }

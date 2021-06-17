@@ -14,8 +14,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
-//    Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
-
     @Override
     public List<User> getUsers() {
         return userRepository.getUsers();
@@ -27,20 +25,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String addUser(User user) {
+    public boolean addUser(User user) {
         userRepository.addUser(user);
-        return "User successfully created";
+        return true;
     }
 
     @Override
-    public String updateUser(User user) {
+    public boolean updateUser(User user) {
         userRepository.updateUser(user);
-        return "User successfully updated";
+        return true;
     }
 
     @Override
-    public String deleteUser(int id) {
+    public boolean deleteUser(int id) {
         userRepository.deleteUser(id);
-        return "User successfully deleted";
+        return true;
     }
 }
