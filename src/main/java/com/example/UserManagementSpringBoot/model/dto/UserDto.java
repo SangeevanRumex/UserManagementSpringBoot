@@ -1,15 +1,14 @@
-package com.example.UserManagementSpringBoot.model;
+package com.example.UserManagementSpringBoot.model.dto;
 
-public class User {
+public class UserDto {
     private int id;
     private String userName;
     private String city;
-    private boolean deleted;
 
-    public User() {
+    public UserDto() {
     }
 
-    public User(int id, String userName, String city) {
+    public UserDto(int id, String userName, String city) {
         this.id = id;
         this.userName = userName;
         this.city = city;
@@ -37,13 +36,5 @@ public class User {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public boolean isDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(boolean deleted) {
-        this.deleted = deleted;
     }
 }
